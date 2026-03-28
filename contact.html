@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Royal Bites</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .font-sans-custom {
+      font-family: 'Josefin Sans', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-yellow-500/10">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+    <div>
+      <h1 class="font-display text-3xl tracking-[0.3em] text-yellow-400">ROYAL BITES</h1>
+      <p class="text-xs tracking-[0.5em] text-yellow-400/60 uppercase">Fine Dining & Bar</p>
+    </div>
+
+    <nav class="hidden md:flex gap-10 text-xs tracking-[0.3em] uppercase text-white/70">
+      <a href="index.html" class="hover:text-yellow-400">Home</a>
+      <a href="menu.html" class="hover:text-yellow-400">Menu</a>
+      <a href="about.html" class="hover:text-yellow-400">About</a>
+      <a href="contact.html" class="text-yellow-400">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
+style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');">
+
+  <div class="bg-black/70 p-10 rounded-xl">
+    <h2 class="font-display text-5xl text-yellow-400 mb-4">Contact Us</h2>
+    <p class="text-gray-300">We’d love to hear from you</p>
+  </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="py-20 px-8">
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+
+    <!-- FORM -->
+    <div>
+      <h3 class="font-display text-3xl text-yellow-400 mb-6">Send a Message</h3>
+
+      <form class="space-y-5">
+
+        <input type="text" placeholder="Your Name"
+          class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-400">
+
+        <input type="email" placeholder="Your Email"
+          class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-400">
+
+        <textarea rows="5" placeholder="Your Message"
+          class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-400"></textarea>
+
+        <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="space-y-8">
+
+      <div>
+        <h3 class="font-display text-3xl text-yellow-400 mb-6">Get in Touch</h3>
+        <p class="text-gray-400">
+          Visit us for an unforgettable dining experience or reach out through any of the channels below.
+        </p>
+      </div>
+
+      <div class="space-y-4 text-gray-300">
+
+        <p><span class="text-yellow-400">📍 Address:</span> Ahmedabad, Gujarat</p>
+        <p><span class="text-yellow-400">📞 Phone:</span> +91 98765 43210</p>
+        <p><span class="text-yellow-400">📧 Email:</span> royalbites@email.com</p>
+
+      </div>
+
+      <!-- MAP -->
+      <div class="rounded-xl overflow-hidden border border-yellow-500/20">
+        <iframe 
+          src="https://maps.google.com/maps?q=Ahmedabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-64 border-0">
+        </iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-center py-6">
+  <p class="text-gray-500">© 2026 Royal Bites. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

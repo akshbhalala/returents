@@ -1,0 +1,105 @@
+body
+ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: #0e0c0a;
+  color: #f5edd6;
+}
+
+
+header {
+  backdrop-filter: blur(10px);
+  background: rgba(14, 12, 10, 0.85);
+  border-radius: 12px;
+}
+
+
+header h1 {
+  letter-spacing: 4px;
+  color: #e8c97a;
+}
+
+header p {
+  letter-spacing: 3px;
+}
+
+
+.nav ul li a {
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: right;
+}
+
+
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #e8c97a;
+  transition: 0.4s ease;
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
+}
+
+.nav ul li a:hover {
+  color: #e8c97a;
+}
+
+
+#contact {
+  background: radial-gradient(circle at top, rgba(201,168,76,0.05), transparent 70%);
+}
+
+form {
+  background: rgba(26, 23, 20, 0.6);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(201,168,76,0.1);
+  backdrop-filter: blur(10px);
+}
+
+
+input,
+textarea {
+  transition: all 0.3s ease;
+}
+
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #e8c97a;
+  box-shadow: 0 0 10px rgba(201,168,76,0.2);
+}
+
+
+button {
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201,168,76,0.2);
+}
+
+
+h2 {
+  letter-spacing: 2px;
+}
+
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}

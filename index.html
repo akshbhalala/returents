@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Bites</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+  
+
+<!-- Google Font (Luxury Serif) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-sans-custom {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+</style>
+
+<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-yellow-500/10">
+
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="flex flex-col leading-none">
+      <span class="font-display text-3xl tracking-[0.3em] text-yellow-400 font-light">
+        ROYAL BITES
+      </span>
+      <span class="font-sans-custom text-[10px] tracking-[0.5em] text-yellow-400/60 uppercase mt-1">
+        Fine Dining & Bar
+      </span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center gap-12 font-sans-custom text-xs tracking-[0.3em] uppercase text-white/70">
+
+      <a href="index.html" class="relative group transition duration-300 hover:text-yellow-400">
+        Home
+        <span class="absolute left-0 -bottom-2 w-0 h-[1px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
+      </a>
+
+      <a href="menu.html" class="relative group transition duration-300 hover:text-yellow-400">
+        Menu
+        <span class="absolute left-0 -bottom-2 w-0 h-[1px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
+      </a>
+
+      <a href="about.html" class="relative group transition duration-300 hover:text-yellow-400">
+        About
+        <span class="absolute left-0 -bottom-2 w-0 h-[1px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
+      </a>
+
+      <a href="gallery.html" class="relative group transition duration-300 hover:text-yellow-400">
+        Gallery
+        <span class="absolute left-0 -bottom-2 w-0 h-[1px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
+      </a>
+
+      <a href="contact.html" class="relative group transition duration-300 hover:text-yellow-400">
+        Contact
+        <span class="absolute left-0 -bottom-2 w-0 h-[1px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
+      </a>
+
+    </nav>
+
+   
+
+    <!-- Mobile Icon -->
+    <div class="md:hidden flex flex-col gap-1.5">
+      <span class="w-6 h-[1px] bg-white"></span>
+      <span class="w-6 h-[1px] bg-white"></span>
+      <span class="w-4 h-[1px] bg-yellow-400"></span>
+    </div>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+<section id="home" class="h-screen flex items-center justify-center text-center bg-cover bg-center"
+style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');">
+
+  <div class="bg-black/60 p-10 rounded-xl">
+    <h2 class="text-5xl font-bold mb-4">Delicious Food</h2>
+    <p class="text-gray-300 mb-6">Experience the taste of luxury</p>
+    <a href="#menu" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300">
+      View Menu
+    </a>
+  </div>
+
+</section>
+
+<!-- MENU SECTION -->
+<section class="py-20 px-8">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- CATEGORY: STARTERS -->
+    <h2 class="font-display text-3xl text-yellow-400 mb-10 text-center">Starters</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\springrolls.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Spring Rolls</h3>
+          <p class="text-gray-400 text-sm">Crispy veg rolls</p>
+          <p class="text-yellow-400 mt-2">₹199</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\paneer pakoda.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Paneer Pakoda</h3>
+          <p class="text-gray-400 text-sm">Spicy grilled wings</p>
+          <p class="text-yellow-400 mt-2">₹299</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\manchurian'.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">manchurain</h3>
+          <p class="text-gray-400 text-sm">Indian grilled delight</p>
+          <p class="text-yellow-400 mt-2">₹249</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY: MAIN COURSE -->
+    <h2 class="font-display text-3xl text-yellow-400 mb-10 text-center">Main Course</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\palak paneer.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Palak Paneer</h3>
+          <p class="text-gray-400 text-sm">Spinach and cottage cheese</p>
+          <p class="text-yellow-400 mt-2">₹399</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\dal tadka.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Dal Tadka</h3>
+          <p class="text-gray-400 text-sm">Aromatic lentils</p>
+          <p class="text-yellow-400 mt-2">₹299</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\dal makhni.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Dal Makhni</h3>
+          <p class="text-gray-400 text-sm">Rich and creamy lentils</p>
+          <p class="text-yellow-400 mt-2">₹349</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY: DESSERT -->
+    <h2 class="font-display text-3xl text-yellow-400 mb-10 text-center">Desserts</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\cheesecake.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Cheesecake</h3>
+          <p class="text-gray-400 text-sm">Rich & creamy</p>
+          <p class="text-yellow-400 mt-2">₹199</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\ice creame.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Ice Cream</h3>
+          <p class="text-gray-400 text-sm">Ice cream</p>
+          <p class="text-yellow-400 mt-2">₹149</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="d:\aksh\Restaurant\img\brownie.jpg" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl">Brownie</h3>
+          <p class="text-gray-400 text-sm">Hot chocolate brownie</p>
+          <p class="text-yellow-400 mt-2">₹179</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 px-8 bg-gray-800 text-center">
+  <h2 class="text-4xl font-bold mb-6 text-yellow-400">About Us</h2>
+  <p class="max-w-2xl mx-auto text-gray-300">
+    Welcome to Royal Bites – where taste meets elegance. We serve high-quality food made with fresh ingredients and passion.
+  </p>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-yellow-500/10 mt-20">
+
+  <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
+
+    <!-- BRAND -->
+    <div>
+      <h2 class="font-display text-2xl tracking-[0.3em] text-yellow-400 mb-3">
+        ROYAL BITES
+      </h2>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Experience luxury dining like never before. Taste, elegance, and perfection in every bite.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div>
+      <h3 class="text-yellow-400 mb-4 text-sm tracking-widest uppercase">Quick Links</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+        <li><a href="menu.html" class="hover:text-yellow-400">Menu</a></li>
+        <li><a href="about.html" class="hover:text-yellow-400">About</a></li>
+        <li><a href="gallery.html" class="hover:text-yellow-400">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+      <h3 class="text-yellow-400 mb-4 text-sm tracking-widest uppercase">Contact</h3>
+      <p class="text-gray-400 text-sm">📍 Ahmedabad, Gujarat</p>
+      <p class="text-gray-400 text-sm mt-2">📞 +91 98765 43210</p>
+      <p class="text-gray-400 text-sm mt-2">📧 royalbites@email.com</p>
+    </div>
+
+    <!-- SOCIAL -->
+    <div>
+      <h3 class="text-yellow-400 mb-4 text-sm tracking-widest uppercase">Follow Us</h3>
+
+      <div class="flex gap-4">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded-full hover:border-yellow-400 hover:text-yellow-400 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded-full hover:border-yellow-400 hover:text-yellow-400 transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded-full hover:border-yellow-400 hover:text-yellow-400 transition">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="border-t border-yellow-500/10 text-center py-4 text-gray-500 text-sm">
+    © 2026 Royal Bites. All rights reserved.
+  </div>
+
+</footer>
+
+<!-- Font Awesome (for icons) -->
+<script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
