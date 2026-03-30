@@ -27,11 +27,13 @@
 <header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-yellow-500/10">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
+    <!-- LOGO -->
     <div>
       <h1 class="font-display text-3xl tracking-[0.3em] text-yellow-400">ROYAL BITES</h1>
       <p class="text-xs tracking-[0.5em] text-yellow-400/60 uppercase">Fine Dining & Bar</p>
     </div>
 
+    <!-- DESKTOP NAV -->
     <nav class="hidden md:flex gap-10 text-xs tracking-[0.3em] uppercase text-white/70">
       <a href="index.html" class="hover:text-yellow-400">Home</a>
       <a href="menu.html" class="hover:text-yellow-400">Menu</a>
@@ -39,8 +41,34 @@
       <a href="contact.html" class="hover:text-yellow-400">Contact</a>
     </nav>
 
+    <!-- MOBILE BUTTON -->
+    <button id="menu-btn" class="md:hidden text-yellow-400 text-2xl">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu"
+    class="hidden md:hidden bg-black/95 text-center py-6 space-y-6 uppercase text-sm tracking-widest">
+
+    <a href="index.html" class="block hover:text-yellow-400">Home</a>
+    <a href="menu.html" class="block hover:text-yellow-400">Menu</a>
+    <a href="about.html" class="block text-yellow-400">About</a>
+    <a href="contact.html" class="block hover:text-yellow-400">Contact</a>
+
   </div>
 </header>
+
+<!-- SCRIPT -->
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
 
 <!-- HERO -->
 <section class="h-[70vh] flex items-center justify-center text-center bg-cover bg-center"

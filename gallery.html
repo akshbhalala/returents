@@ -9,29 +9,27 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    .font-display {
-      font-family: 'Cormorant Garamond', serif;
-    }
-    .font-sans-custom {
-      font-family: 'Josefin Sans', sans-serif;
-    }
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+    .font-sans-custom { font-family: 'Josefin Sans', sans-serif; }
   </style>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-950 text-white font-sans-custom">
 
 <!-- HEADER -->
-<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-yellow-500/10">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<header class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-yellow-500/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
+    <!-- LOGO -->
     <div>
       <h1 class="font-display text-3xl tracking-[0.3em] text-yellow-400">ROYAL BITES</h1>
-      <p class="text-xs tracking-[0.5em] text-yellow-400/60 uppercase">Fine Dining & Bar</p>
+      <p class="text-[10px] tracking-[0.5em] text-yellow-400/60 uppercase">Fine Dining</p>
     </div>
 
+    <!-- DESKTOP NAV -->
     <nav class="hidden md:flex gap-10 text-xs tracking-[0.3em] uppercase text-white/70">
       <a href="index.html" class="hover:text-yellow-400">Home</a>
       <a href="menu.html" class="hover:text-yellow-400">Menu</a>
@@ -40,77 +38,108 @@
       <a href="contact.html" class="hover:text-yellow-400">Contact</a>
     </nav>
 
+    <!-- MOBILE BUTTON -->
+    <button id="menu-btn" class="md:hidden text-yellow-400 text-2xl">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu"
+    class="hidden md:hidden bg-black/95 text-center py-6 space-y-6 uppercase text-sm tracking-widest">
+
+    <a href="index.html" class="block hover:text-yellow-400">Home</a>
+    <a href="menu.html" class="block hover:text-yellow-400">Menu</a>
+    <a href="about.html" class="block hover:text-yellow-400">About</a>
+    <a href="gallery.html" class="block text-yellow-400">Gallery</a>
+    <a href="contact.html" class="block hover:text-yellow-400">Contact</a>
+
   </div>
 </header>
 
-<!-- HERO -->
-<section class="h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9');">
+<!-- SCRIPT -->
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
 
-  <div class="bg-black/70 p-10 rounded-xl">
-    <h2 class="font-display text-5xl text-yellow-400 mb-4">Our Gallery</h2>
-    <p class="text-gray-300">A glimpse of our luxury dining experience</p>
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
+<!-- HERO -->
+<section class="relative h-[70vh] flex items-center justify-center text-center overflow-hidden">
+
+  <!-- IMAGE -->
+  <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9"
+       class="absolute w-full h-full object-cover scale-110">
+
+  <!-- OVERLAY -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10">
+    <h2 class="font-display text-5xl md:text-6xl text-yellow-400 mb-4 tracking-wide">
+      Our Gallery
+    </h2>
+    <p class="text-gray-300 text-lg">Experience luxury through moments</p>
   </div>
 
 </section>
 
+<!-- FILTER BUTTONS -->
+<section class="py-10 text-center">
+  <div class="flex flex-wrap justify-center gap-4">
+
+    <button onclick="filterGallery('all')" class="btn active">All</button>
+    <button onclick="filterGallery('food')" class="btn">Food</button>
+    <button onclick="filterGallery('ambience')" class="btn">Ambience</button>
+    <button onclick="filterGallery('dessert')" class="btn">Desserts</button>
+
+  </div>
+</section>
+
 <!-- GALLERY -->
-<section class="py-20 px-6">
+<section class="px-6 pb-20">
 
-  <h2 class="font-display text-4xl text-yellow-400 text-center mb-12">
-    Explore Our Moments
-  </h2>
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-  <!-- GRID -->
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-    <!-- Image Card -->
-    <div class="group relative overflow-hidden rounded-xl">
+    <!-- ITEM -->
+    <div class="gallery-item food group relative overflow-hidden rounded-2xl">
       <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
-        class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-        <span class="text-yellow-400 text-lg">Fine Dining</span>
-      </div>
+        class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+      <div class="overlay">Fine Dining</div>
     </div>
 
-    <div class="group relative overflow-hidden rounded-xl">
+    <div class="gallery-item food group relative overflow-hidden rounded-2xl">
       <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"
-        class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-        <span class="text-yellow-400 text-lg">Delicious Food</span>
-      </div>
+        class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+      <div class="overlay">Delicious Food</div>
     </div>
 
-    <div class="group relative overflow-hidden rounded-xl">
+    <div class="gallery-item ambience group relative overflow-hidden rounded-2xl">
       <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1"
-        class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-        <span class="text-yellow-400 text-lg">Luxury Ambience</span>
-      </div>
+        class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+      <div class="overlay">Luxury Ambience</div>
     </div>
 
-    <div class="group relative overflow-hidden rounded-xl">
+    <div class="gallery-item food group relative overflow-hidden rounded-2xl">
       <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5"
-        class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-        <span class="text-yellow-400 text-lg">Chef Specials</span>
-      </div>
+        class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+      <div class="overlay">Chef Specials</div>
     </div>
 
-    <div class="group relative overflow-hidden rounded-xl">
+    <div class="gallery-item dessert group relative overflow-hidden rounded-2xl">
       <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b"
-        class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-        <span class="text-yellow-400 text-lg">Desserts</span>
-      </div>
+        class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+      <div class="overlay">Desserts</div>
     </div>
 
-    <div class="group relative overflow-hidden rounded-xl">
+    <div class="gallery-item food group relative overflow-hidden rounded-2xl">
       <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"
-        class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-        <span class="text-yellow-400 text-lg">Signature Dishes</span>
-      </div>
+        class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+      <div class="overlay">Signature Dishes</div>
     </div>
 
   </div>
@@ -118,9 +147,59 @@ style="background-image:url('https://images.unsplash.com/photo-1498654896293-37a
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-black text-center py-6">
-  <p class="text-gray-500">© 2026 Royal Bites. All rights reserved.</p>
+<footer class="bg-black text-center py-6 border-t border-yellow-500/10">
+  <p class="text-gray-500 text-sm">© 2026 Royal Bites. Crafted with luxury.</p>
 </footer>
+
+<!-- STYLE -->
+<style>
+  .btn {
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: #1f2937;
+    transition: 0.3s;
+  }
+  .btn:hover, .btn.active {
+    background: #facc15;
+    color: black;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #facc15;
+    opacity: 0;
+    transition: 0.3s;
+    font-size: 18px;
+  }
+
+  .group:hover .overlay {
+    opacity: 1;
+  }
+</style>
+
+<!-- SCRIPT -->
+<script>
+  function filterGallery(category) {
+    const items = document.querySelectorAll(".gallery-item");
+    const buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+
+    items.forEach(item => {
+      if (category === "all") {
+        item.style.display = "block";
+      } else {
+        item.style.display = item.classList.contains(category) ? "block" : "none";
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

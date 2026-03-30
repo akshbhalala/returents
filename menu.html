@@ -9,29 +9,27 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    .font-display {
-      font-family: 'Cormorant Garamond', serif;
-    }
-    .font-sans-custom {
-      font-family: 'Josefin Sans', sans-serif;
-    }
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+    .font-sans-custom { font-family: 'Josefin Sans', sans-serif; }
   </style>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-950 text-white font-sans-custom">
 
 <!-- HEADER -->
-<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-yellow-500/10">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<header class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-yellow-500/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
+    <!-- LOGO -->
     <div>
       <h1 class="font-display text-3xl tracking-[0.3em] text-yellow-400">ROYAL BITES</h1>
-      <p class="text-xs tracking-[0.5em] text-yellow-400/60 uppercase">Fine Dining & Bar</p>
+      <p class="text-[10px] tracking-[0.5em] text-yellow-400/60 uppercase">Fine Dining</p>
     </div>
 
+    <!-- DESKTOP NAV -->
     <nav class="hidden md:flex gap-10 text-xs tracking-[0.3em] uppercase text-white/70">
       <a href="index.html" class="hover:text-yellow-400">Home</a>
       <a href="menu.html" class="text-yellow-400">Menu</a>
@@ -39,125 +37,136 @@
       <a href="contact.html" class="hover:text-yellow-400">Contact</a>
     </nav>
 
+    <!-- MOBILE BUTTON -->
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5">
+      <span class="w-6 h-[2px] bg-white transition"></span>
+      <span class="w-6 h-[2px] bg-white transition"></span>
+      <span class="w-4 h-[2px] bg-yellow-400 transition"></span>
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu"
+    class="hidden md:hidden bg-black/95 text-center py-6 space-y-6 uppercase text-sm tracking-widest transition-all duration-500">
+
+    <a href="index.html" class="block hover:text-yellow-400">Home</a>
+    <a href="menu.html" class="block text-yellow-400">Menu</a>
+    <a href="about.html" class="block hover:text-yellow-400">About</a>
+    <a href="contact.html" class="block hover:text-yellow-400">Contact</a>
+
   </div>
 </header>
 
-<!-- HERO -->
-<section class="h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947');">
+<!-- SCRIPT -->
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const lines = btn.querySelectorAll("span");
 
-  <div class="bg-black/70 p-10 rounded-xl">
-    <h2 class="font-display text-5xl text-yellow-400 mb-4">Our Menu</h2>
-    <p class="text-gray-300">Taste the luxury</p>
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+
+    // hamburger animation
+    lines[0].classList.toggle("rotate-45");
+    lines[0].classList.toggle("translate-y-2");
+
+    lines[1].classList.toggle("opacity-0");
+
+    lines[2].classList.toggle("-rotate-45");
+    lines[2].classList.toggle("-translate-y-2");
+  });
+</script>
+
+
+
+<!-- HERO -->
+<section class="relative h-[70vh] flex items-center justify-center text-center overflow-hidden">
+
+  <img src="https://images.unsplash.com/photo-1544025162-d76694265947"
+       class="absolute w-full h-full object-cover scale-110">
+
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90"></div>
+
+  <div class="relative z-10">
+    <h2 class="font-display text-5xl md:text-6xl text-yellow-400 mb-4">Our Menu</h2>
+    <p class="text-gray-300 text-lg">Taste the luxury experience</p>
   </div>
 
 </section>
 
-<!-- MENU SECTION -->
-<section class="py-20 px-8">
+<!-- FILTER BUTTONS -->
+<section class="py-12 text-center">
+  <div class="flex flex-wrap justify-center gap-4">
 
-  <div class="max-w-7xl mx-auto">
+    <button onclick="filterMenu('all')" class="btn active">All</button>
+    <button onclick="filterMenu('starter')" class="btn">Starters</button>
+    <button onclick="filterMenu('main')" class="btn">Main Course</button>
+    <button onclick="filterMenu('dessert')" class="btn">Desserts</button>
 
-    <!-- CATEGORY: STARTERS -->
-    <h2 class="font-display text-3xl text-yellow-400 mb-10 text-center">Starters</h2>
+  </div>
+</section>
 
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
+<!-- MENU -->
+<section class="px-6 pb-20">
 
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/springrolls.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Spring Rolls</h3>
-          <p class="text-gray-400 text-sm">Crispy veg rolls</p>
-          <p class="text-yellow-400 mt-2">₹199</p>
-        </div>
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+    <!-- STARTERS -->
+    <div class="menu-item starter card">
+      <img src="img/springrolls.jpg" class="card-img">
+      <div class="card-body">
+        <h3>Spring Rolls</h3>
+        <p>Crispy veg rolls</p>
+        <span>₹199</span>
       </div>
-
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/paneer pakoda.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Paneer Pakoda</h3>
-          <p class="text-gray-400 text-sm">Spicy grilled wings</p>
-          <p class="text-yellow-400 mt-2">₹299</p>
-        </div>
-      </div>
-
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/manchurian.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">manchurain</h3>
-          <p class="text-gray-400 text-sm">Indian grilled delight</p>
-          <p class="text-yellow-400 mt-2">₹249</p>
-        </div>
-      </div>
-
     </div>
 
-    <!-- CATEGORY: MAIN COURSE -->
-    <h2 class="font-display text-3xl text-yellow-400 mb-10 text-center">Main Course</h2>
-
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/palak paneer.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Palak Paneer</h3>
-          <p class="text-gray-400 text-sm">Spinach and cottage cheese</p>
-          <p class="text-yellow-400 mt-2">₹399</p>
-        </div>
+    <div class="menu-item starter card">
+      <img src="img/paneer pakoda.jpg" class="card-img">
+      <div class="card-body">
+        <h3>Paneer Pakoda</h3>
+        <p>Spicy crispy delight</p>
+        <span>₹299</span>
       </div>
-
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/dal tadka.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Dal Tadka</h3>
-          <p class="text-gray-400 text-sm">Aromatic lentils</p>
-          <p class="text-yellow-400 mt-2">₹299</p>
-        </div>
-      </div>
-
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/dal makhni.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Dal Makhni</h3>
-          <p class="text-gray-400 text-sm">Rich and creamy lentils</p>
-          <p class="text-yellow-400 mt-2">₹349</p>
-        </div>
-      </div>
-
     </div>
 
-    <!-- CATEGORY: DESSERT -->
-    <h2 class="font-display text-3xl text-yellow-400 mb-10 text-center">Desserts</h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/cheesecake.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Cheesecake</h3>
-          <p class="text-gray-400 text-sm">Rich & creamy</p>
-          <p class="text-yellow-400 mt-2">₹199</p>
-        </div>
+    <!-- MAIN -->
+    <div class="menu-item main card">
+      <img src="img/palak paneer.jpg" class="card-img">
+      <div class="card-body">
+        <h3>Palak Paneer</h3>
+        <p>Spinach & paneer</p>
+        <span>₹399</span>
       </div>
+    </div>
 
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/ice cream.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Ice Cream</h3>
-          <p class="text-gray-400 text-sm">Ice cream</p>
-          <p class="text-yellow-400 mt-2">₹149</p>
-        </div>
+    <div class="menu-item main card">
+      <img src="img/dal tadka.jpg" class="card-img">
+      <div class="card-body">
+        <h3>Dal Tadka</h3>
+        <p>Aromatic lentils</p>
+        <span>₹299</span>
       </div>
+    </div>
 
-      <div class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition">
-        <img src="img/brownie.jpg" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl">Brownie</h3>
-          <p class="text-gray-400 text-sm">Hot chocolate brownie</p>
-          <p class="text-yellow-400 mt-2">₹179</p>
-        </div>
+    <!-- DESSERT -->
+    <div class="menu-item dessert card">
+      <img src="img/cheesecake.jpg" class="card-img">
+      <div class="card-body">
+        <h3>Cheesecake</h3>
+        <p>Rich & creamy</p>
+        <span>₹199</span>
       </div>
+    </div>
 
+    <div class="menu-item dessert card">
+      <img src="img/brownie.jpg" class="card-img">
+      <div class="card-body">
+        <h3>Brownie</h3>
+        <p>Hot chocolate</p>
+        <span>₹179</span>
+      </div>
     </div>
 
   </div>
@@ -165,9 +174,83 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-black text-center py-6">
-  <p class="text-gray-500">© 2026 Royal Bites. All rights reserved.</p>
+<footer class="bg-black text-center py-6 border-t border-yellow-500/10">
+  <p class="text-gray-500 text-sm">© 2026 Royal Bites. Luxury Dining Experience</p>
 </footer>
+
+<!-- STYLE -->
+<style>
+  .btn {
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: #1f2937;
+    transition: 0.3s;
+  }
+  .btn:hover, .btn.active {
+    background: #facc15;
+    color: black;
+  }
+
+  .card {
+    background: #1f2937;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: 0.5s;
+  }
+  .card:hover .card-img {
+    transform: scale(1.1);
+  }
+
+  .card-body {
+    padding: 20px;
+    text-align: center;
+  }
+  .card-body h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .card-body p {
+    color: #9ca3af;
+    font-size: 14px;
+  }
+  .card-body span {
+    display: block;
+    margin-top: 10px;
+    color: #facc15;
+    font-weight: bold;
+  }
+</style>
+
+<!-- SCRIPT -->
+<script>
+  function filterMenu(category) {
+    const items = document.querySelectorAll(".menu-item");
+    const buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+
+    items.forEach(item => {
+      if (category === "all") {
+        item.style.display = "block";
+      } else {
+        item.style.display = item.classList.contains(category) ? "block" : "none";
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
